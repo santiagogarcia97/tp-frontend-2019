@@ -1,0 +1,22 @@
+<div class="container" *ngIf="result">
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-sm table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+      </tr>
+      </thead>
+      <tbody class="table-striped">
+      <tr *ngFor="let estadio of result.data; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td><a routerLink="/estadios/{{estadio._id}}">{{estadio.nombre}}</a></td>
+        <td>{{estadio.direccion}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
