@@ -7,7 +7,6 @@ import { EstadiosListComponent } from './modules/pages/estadios/estadios-list/es
 import { EstadiosPageComponent } from './modules/pages/estadios/estadios-page/estadios-page.component';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { EstadioDetailsComponent } from './modules/pages/estadios/estadio-details/estadio-details.component';
 import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { HeaderComponent } from './core/header/header.component';
     AppComponent,
     EstadiosListComponent,
     EstadiosPageComponent,
-    EstadioDetailsComponent,
     HeaderComponent
   ],
   imports: [

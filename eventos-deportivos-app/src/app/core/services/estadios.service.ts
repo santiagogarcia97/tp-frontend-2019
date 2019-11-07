@@ -13,11 +13,11 @@ export class EstadiosService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'estadios/');
+    return this.http.get<any>(environment.apiUrl + 'api/estadios/');
   }
 
   public getById(estadioId: string): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'estadios/' + estadioId);
+    return this.http.get<any>(environment.apiUrl + 'api/estadios/' + estadioId);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {environment} from '../../../../../environments/environment';
 import {EstadioModel} from '../../../../core';
 import {EstadiosService} from '../../../../core';
 
@@ -9,7 +10,9 @@ import {EstadiosService} from '../../../../core';
 })
 export class EstadiosListComponent implements OnInit {
 
-  result: {message: string; data:[EstadioModel]; error: string; };
+  apiUrl = environment.apiUrl;
+
+  result: {message: string; data: [EstadioModel]; error: string; };
 
   constructor(private EstadiosServ: EstadiosService) { }
 
