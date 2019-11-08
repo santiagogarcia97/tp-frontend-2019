@@ -15,6 +15,7 @@ import { PartidosPageComponent } from './modules/pages/partidos/partidos-page/pa
 import { JugadoresPageComponent } from './modules/pages/jugadores/jugadores-page/jugadores-page.component';
 import { JugadoresListComponent } from './modules/pages/jugadores/jugadores-list/jugadores-list.component';
 import { EquiposPageComponent } from './modules/pages/equipos/equipos-page/equipos-page.component';
+import { EquiposListComponent } from './modules/pages/equipos/equipos-list/equipos-list.component';
 
 registerLocaleData(localeEsAR, 'es-Ar');
 
@@ -28,7 +29,8 @@ registerLocaleData(localeEsAR, 'es-Ar');
     PartidosPageComponent,
     JugadoresPageComponent,
     JugadoresListComponent,
-    EquiposPageComponent
+    EquiposPageComponent,
+    EquiposListComponent
     ],
   imports: [
     BrowserModule,
