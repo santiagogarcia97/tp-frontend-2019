@@ -1,0 +1,36 @@
+main.container {
+  height: 100%;
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  /*set left/right padding according to needs*/
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+main .row {
+  height: 100%;
+  display: table-row;
+}
+
+main .sidebar {
+  display: table-cell;
+  width: 200px;
+  background: #383435;
+  color: #aaa;
+  padding-top: 20px;
+}
+
+main .content {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.list-group-item {
+  background: #383435;
+  color: #fcfff7;
+  text-align: right;
+}

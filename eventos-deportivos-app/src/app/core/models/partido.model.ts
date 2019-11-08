@@ -3,6 +3,7 @@ import {EventoModel} from './evento.model';
 import {EstadioModel} from './estadio.model';
 
 export interface PartidoModel {
+  _id: string;
   fechaHora: Date;
   local: EquipoModel;
   visitante: EquipoModel;

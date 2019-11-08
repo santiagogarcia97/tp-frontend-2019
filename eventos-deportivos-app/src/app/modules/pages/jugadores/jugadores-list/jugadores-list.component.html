@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="form-group">
+      <input class="form-control" #sbox placeholder="Search for" (input)="searchJugadores(sbox.value)">
+    </div>
+
+   </div>
+
+    <div class="row">
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Nombre</th>
+          <th class="text-center">Goles</th>
+          <th>Edad</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="result">
+        <tr *ngFor="let jugador of result.data; index as i">
+          <td>{{i+1}}</td>
+          <td>{{jugador.equipo.nombre}}</td>
+          <td>{{jugador.nombre}}</td>
+          <td class="text-center">{{jugador.goles}}</td>
+          <td>{{jugador.fechaNac | date}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <span *ngIf="result && result.data === undefined">{{result.message}}</span>
+    </div>
+</div>

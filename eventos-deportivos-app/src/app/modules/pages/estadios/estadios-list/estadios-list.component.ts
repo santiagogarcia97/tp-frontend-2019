@@ -14,11 +14,11 @@ export class EstadiosListComponent implements OnInit {
 
   result: {message: string; data: [EstadioModel]; error: string; };
 
-  constructor(private EstadiosServ: EstadiosService) { }
+  constructor(private estadiosService: EstadiosService) { }
 
   ngOnInit() {
 
-    this.EstadiosServ.getAll()
+    this.estadiosService.getAll()
         .subscribe( result => this.result = result );
   }
 
