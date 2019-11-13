@@ -1,16 +1,25 @@
 <div class="container" *ngIf="result">
 
-  <div class="row" *ngFor="let equipo of result.data">
+  <a  *ngFor="let equipo of result.data" routerLink="/equipos/{{equipo._id}}">
+  <div class="row">
     <div class="card col-12 m-2">
       <div class="row">
         <div class="col-2">
           <img src="{{apiUrl + equipo.escudo}}" height="80px" class="m-2">
         </div>
-        <div class="col-10 m-auto">
-          <span class="h3">{{equipo.nombre}}</span>
+        <div class="col-5 m-auto">
+          <span class="h3 font-weight-bold">{{equipo.nombre}}</span>
+        </div>
+        <div class="col-5 m-auto">
+          <span class="h3"> DT: {{equipo.dt.nombre}}</span>
         </div>
       </div>
     </div>
   </div>
+  </a>
 
+</div>
+
+<div class="container text-center" *ngIf="!result">
+  <span>Buscando equipos...</span>
 </div>

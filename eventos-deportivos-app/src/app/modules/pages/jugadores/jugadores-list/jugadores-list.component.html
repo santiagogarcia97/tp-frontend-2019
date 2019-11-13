@@ -16,7 +16,8 @@
           <th>Equipo</th>
           <th>Nombre</th>
           <th class="text-center">Goles</th>
-          <th>Edad</th>
+          <th class="text-center">Tarjetas amarillas</th>
+          <th class="text-center">Tarjetas rojas</th>
         </tr>
         </thead>
         <tbody *ngIf="result">
@@ -25,7 +26,8 @@
           <td>{{jugador.equipo.nombre}}</td>
           <td>{{jugador.nombre}}</td>
           <td class="text-center">{{jugador.goles}}</td>
-          <td>{{jugador.fechaNac | date}}</td>
+          <td class="text-center">{{jugador.amarillas}}</td>
+          <td class="text-center">{{jugador.rojas}}</td>
         </tr>
         </tbody>
       </table>

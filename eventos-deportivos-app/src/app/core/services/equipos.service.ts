@@ -11,6 +11,12 @@ export class EquiposService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'api/equipos/');
+    return this.http.get<any>(environment.apiUrl + '/api/equipos/');
+  }
+  public getById(id: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/equipos/' + id);
+  }
+  public getJugadores(id: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/equipos/' + id + '/jugadores');
   }
 }

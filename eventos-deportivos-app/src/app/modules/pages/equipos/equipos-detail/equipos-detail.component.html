@@ -1,0 +1,54 @@
+<div class="container">
+<div class="container" *ngIf="resultEquipo">
+  <div class="row">
+    <div class="col-2 m-auto">
+      <img src="{{apiUrl + resultEquipo.data.escudo}}" height="100px">
+    </div>
+    <div class="col-10 m-auto">
+      <div class="row">
+        <div class="col-12">
+          <span class="font-weight-bold h3">{{resultEquipo.data.nombre}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="h5">DT: {{resultEquipo.data.dt.nombre}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<hr>
+<span class="font-weight-bold h4">Plantel</span>
+<br>
+<div *ngIf="resultJugadores">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th class="text-center">Goles</th>
+        <th class="text-center">Tarjetas amarillas</th>
+        <th class="text-center">Tarjetas rojas</th>
+        <th class="text-center">Edad</th>
+        <th class="text-center">Fecha de nacimiento</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="resultJugadores">
+      <tr *ngFor="let jugador of resultJugadores.data; index as i">
+        <td>{{i+1}}</td>
+        <td>{{jugador.nombre}}</td>
+        <td class="text-center">{{jugador.goles}}</td>
+        <td class="text-center">{{jugador.amarillas}}</td>
+        <td class="text-center">{{jugador.rojas}}</td>
+        <td class="text-center">{{this.calcularEdad(jugador.fechaNac)}} años</td>
+        <td class="text-center">{{jugador.fechaNac | date}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <span *ngIf="resultJugadores && resultJugadores.data === undefined">{{resultJugadores.message}}</span>
+  </div>
+</div>
+</div>

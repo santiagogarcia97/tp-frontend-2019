@@ -11,6 +11,6 @@ export class PartidosService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'api/partidos/');
+    return this.http.get<any>(environment.apiUrl + '/api/partidos/');
   }
 }

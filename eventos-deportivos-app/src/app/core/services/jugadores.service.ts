@@ -11,14 +11,14 @@ export class JugadoresService {
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'api/jugadores/');
+    return this.http.get<any>(environment.apiUrl + '/api/jugadores/');
   }
 
   public getById(estadioId: string): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'api/jugadores/' + estadioId);
+    return this.http.get<any>(environment.apiUrl + '/api/jugadores/' + estadioId);
   }
 
   public search(searchTerm: string): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'api/jugadores/?search=' + searchTerm);
+    return this.http.get<any>(environment.apiUrl + '/api/jugadores/?search=' + searchTerm);
   }
 }

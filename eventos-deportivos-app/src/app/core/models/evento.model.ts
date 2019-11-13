@@ -9,5 +9,5 @@ export interface EventoModel {
   tipo: TipoEventoModel;
   equipo: EquipoModel;
   jugador: JugadorModel;
-  fechaHora: Date;
+  minutoOcurrencia: Date;
 }

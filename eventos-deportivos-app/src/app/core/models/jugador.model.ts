@@ -6,4 +6,6 @@ export interface JugadorModel {
   fechaNac: Date;
   equipo: EquipoModel;
   goles: number;
+  amarillas: number;
+  rojas: number;
 }

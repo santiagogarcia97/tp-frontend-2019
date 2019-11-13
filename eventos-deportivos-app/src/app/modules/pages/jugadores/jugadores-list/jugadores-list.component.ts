@@ -19,7 +19,7 @@ export class JugadoresListComponent implements OnInit {
       .subscribe( result => this.result = result );
   }
 
-  private searchJugadores(searchTerm: string) {
+  searchJugadores(searchTerm: string) {
     this.jugadoresService.search(searchTerm)
       .subscribe(result => this.result = result);
   }
