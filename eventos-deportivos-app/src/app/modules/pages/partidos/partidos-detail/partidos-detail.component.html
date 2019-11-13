@@ -1,0 +1,68 @@
+<div class="container">
+<div class="card m-2 p-2">
+  <div class="container" *ngIf="resultPartido">
+    <div class="row m-auto">
+      <div class="col-2 m-auto text-center">
+        <img src="{{this.apiUrl + this.resultPartido.data.local.escudo}}" height="100px">
+      </div>
+      <div class="col-3 m-auto text-center">
+        <span class="h3 font-weight-bold">{{this.resultPartido.data.local.nombre}}</span>
+      </div>
+      <div class="col-2 m-auto text-center">
+        <span class=" m-auto text-muted">vs</span>
+      </div>
+      <div class="col-3 m-auto text-center">
+        <span class="h3 font-weight-bold">{{this.resultPartido.data.visitante.nombre}}</span>
+      </div>
+      <div class="col-2 m-auto text-center">
+        <img src="{{this.apiUrl + this.resultPartido.data.visitante.escudo}}" height="100px">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <p class="text-center">{{this.resultPartido.data.fechaHora | date:'fullDate'}}</p>
+        <p class="text-center font-weight-bold">{{this.resultPartido.data.fechaHora | date:'shortTime':'+0'}} Hs.</p>
+        <p class="text-center">Estadio {{this.resultPartido.data.estadio.nombre}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card m-2 p-2 text-center">
+  <h4 class="font-weight-bold">Eventos del partido</h4>
+  <hr>
+  <div class="container" *ngIf="resultEventos">
+    <div *ngFor="let evento of resultEventos.data">
+
+      <div class="row">
+        <div class="col m-auto">
+          <div *ngIf="evento.equipo && evento.equipo._id === resultPartido.data.local._id">
+            <span>{{evento.tipo.desc}} </span>
+            <span *ngIf="evento.jugador" class="font-weight-bold">{{evento.jugador.nombre}}</span>
+          </div>
+        </div>
+
+        <div class="col-2 m-auto">
+          <div class="row text-center m-auto">
+            <span class="font-weight-bold w-100 text-center">{{evento.minutoOcurrencia}}'</span>
+          </div>
+          <div class="row text-center m-auto">
+            <span class="w-100 text-center">
+              <img src="{{apiUrl + evento.tipo.icono}}" height="20">
+            </span>
+          </div>
+        </div>
+
+        <div class="col m-auto">
+          <div *ngIf="evento.equipo && evento.equipo._id === resultPartido.data.visitante._id">
+            <span>{{evento.tipo.desc}} </span>
+            <span *ngIf="evento.jugador" class="font-weight-bold">{{evento.jugador.nombre}}</span>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
+</div>

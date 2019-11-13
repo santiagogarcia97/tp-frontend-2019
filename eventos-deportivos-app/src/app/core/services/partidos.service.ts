@@ -13,4 +13,10 @@ export class PartidosService {
   public getAll(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + '/api/partidos/');
   }
+  public getById(id: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/partidos/' + id);
+  }
+  public getEventos(id: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/partidos/' + id + '/eventos');
+  }
 }
