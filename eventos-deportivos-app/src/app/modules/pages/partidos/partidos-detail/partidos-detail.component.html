@@ -63,6 +63,9 @@
       <hr>
     </div>
   </div>
+  <div *ngIf="resultEventos && !resultEventos.data">
+    <span>No existe ningún evento</span>
+  </div>
 </div>
 
 </div>

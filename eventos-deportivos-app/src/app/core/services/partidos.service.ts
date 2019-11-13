@@ -13,6 +13,12 @@ export class PartidosService {
   public getAll(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + '/api/partidos/');
   }
+  public getFinalizados(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/partidos/?finalizado=true');
+  }
+  public getProximos(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + '/api/partidos/?finalizado=false');
+  }
   public getById(id: string): Observable<any> {
     return this.http.get<any>(environment.apiUrl + '/api/partidos/' + id);
   }

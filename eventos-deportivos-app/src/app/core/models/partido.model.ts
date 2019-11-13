@@ -9,4 +9,5 @@ export interface PartidoModel {
   visitante: EquipoModel;
   eventos: [EventoModel];
   estadio: EstadioModel;
+  finalizado: boolean;
 }

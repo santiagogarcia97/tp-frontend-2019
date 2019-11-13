@@ -1,47 +1,111 @@
-<div class="row" *ngIf="result">
-  <div class="col-lg-6" *ngFor="let partido of result.data">
+<div class="container">
+  <div class="row" *ngIf="resultProximos">
+    <div class="col">
+      <div class="row">
+        <h3>Proximos partidos</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-6" *ngFor="let partido of resultProximos.data">
 
-    <a routerLink="/partidos/{{partido._id}}">
-    <div class="card m-4">
+          <a routerLink="/partidos/{{partido._id}}">
+            <div class="card m-4">
 
-      <h5 class="card-header text-center">{{partido.fechaHora | date:'fullDate'}}</h5>
+              <h5 class="card-header text-center">{{partido.fechaHora | date:'fullDate'}}</h5>
 
-      <div class="card-body">
-        <div class="row">
+              <div class="card-body">
+                <div class="row">
 
-          <div class="col-8">
-            <div class="row">
-              <div class="col-12">
-                <img src="{{apiUrl + partido.local.escudo}}" height="60px">
-                <span class="h5"> {{partido.local.nombre}}</span>
-                <hr>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-12">
+                        <img src="{{apiUrl + partido.local.escudo}}" height="60px">
+                        <span class="h5"> {{partido.local.nombre}}</span>
+                        <hr>
+                      </div>
+
+                      <div class="col-12">
+                        <img src="{{apiUrl + partido.visitante.escudo}}" height="60px">
+                        <span class="h5"> {{partido.visitante.nombre}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="row h-100">
+                      <div class="col-12 m-auto">
+                        <p class="text-center font-weight-bold h5">{{partido.fechaHora | date:'shortTime':'+0'}}</p>
+                      </div>
+
+                      <div class="col-12 m-auto">
+                        <p class="text-center text-muted h5">
+                          Estadio {{partido.estadio.nombre}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
-              <div class="col-12">
-                <img src="{{apiUrl + partido.visitante.escudo}}" height="60px">
-                <span class="h5"> {{partido.visitante.nombre}}</span>
-              </div>
             </div>
-          </div>
-
-          <div class="col-4">
-            <div class="row h-100">
-              <div class="col-12 m-auto">
-                <p class="text-center font-weight-bold h5">{{partido.fechaHora | date:'shortTime':'+0'}}</p>
-              </div>
-
-              <div class="col-12 m-auto">
-                <p class="text-center text-muted h5">
-                  Estadio {{partido.estadio.nombre}}
-                </p>
-              </div>
-            </div>
-          </div>
-
+          </a>
         </div>
       </div>
-
     </div>
-    </a>
+  </div>
+  <div class="row" *ngIf="resultFinalizados">
+    <div class="col">
+    <div class="row">
+      <h3>Partidos finalizados</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-6" *ngFor="let partido of resultFinalizados.data">
+
+        <a routerLink="/partidos/{{partido._id}}">
+          <div class="card m-4">
+
+            <h5 class="card-header text-center">{{partido.fechaHora | date:'fullDate'}}</h5>
+
+            <div class="card-body">
+              <div class="row">
+
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-12">
+                      <img src="{{apiUrl + partido.local.escudo}}" height="60px">
+                      <span class="h5"> {{partido.local.nombre}}</span>
+                      <hr>
+                    </div>
+
+                    <div class="col-12">
+                      <img src="{{apiUrl + partido.visitante.escudo}}" height="60px">
+                      <span class="h5"> {{partido.visitante.nombre}}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="row h-100">
+                    <div class="col-12 m-auto">
+                      <p class="text-center font-weight-bold h5">{{partido.fechaHora | date:'shortTime':'+0'}}</p>
+                    </div>
+
+                    <div class="col-12 m-auto">
+                      <p class="text-center text-muted h5">
+                        Estadio {{partido.estadio.nombre}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
+

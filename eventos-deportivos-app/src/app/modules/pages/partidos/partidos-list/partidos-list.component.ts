@@ -12,13 +12,16 @@ export class PartidosListComponent implements OnInit {
 
   apiUrl = environment.apiUrl;
 
-  result: {message: string; data: [PartidoModel]; error: string; };
+  resultFinalizados: {message: string; data: [PartidoModel]; error: string; };
+  resultProximos: {message: string; data: [PartidoModel]; error: string; };
 
   constructor(private partidosService: PartidosService) { }
 
   ngOnInit() {
-    this.partidosService.getAll()
-      .subscribe( result => this.result = result );
+    this.partidosService.getFinalizados()
+      .subscribe( result => this.resultFinalizados = result );
+    this.partidosService.getProximos()
+      .subscribe( result => this.resultProximos = result );
   }
 
 }
